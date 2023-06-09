@@ -2,28 +2,25 @@
 
 opcion="0"
 
-until [[ $opcion =~ [1-6] ]]; do
-	echo "(1)Generar imagenes. (2)Descargar imagenes. (3)Descargar imagenes. (4)Procesar imagenes."
+until [[ $opcion =~ [1-4] ]]; do
+	echo "(1)Generar imagenes. (2)Descargar imagenes. (3) Procesar imagenes. (4)Comprimir imagenes"
 
 	read -p "ingrese la opcion deseada" opcion
 
 	case $opcion in
   		1)
-			echo "elegiste la opcion1"
+			bash generar.sh
 			;;
 		2)
-			echo "elegiste la opcion 2"
+			bash descargar.sh
 			;;
 		3)
-        		echo "elegiste la opcion 3"
+			bash procesar.sh
 			;;
 		4)
-        		echo "elegiste la opcion 4"
+        		bash comprimir.sh
 			;;
-		5)
-        		echo "elegiste la opcion 5"
-			;;
-  		*)
+		*)
 			echo "no corresponde al menu"
 			;;
 	esac
