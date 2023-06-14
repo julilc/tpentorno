@@ -1,4 +1,4 @@
-#! usr/bin/bash
+#!/usr/bin/bash
 
 opcion="0"
 
@@ -9,10 +9,14 @@ until [[ $opcion =~ [1-4] ]]; do
 
 	case $opcion in
   		1)
-			bash generar.sh
+			read -p "ingrese el numero de imagenes a generar" numero
+			bash generar.sh $numero
 			;;
 		2)
-			bash descargar.sh
+			read -p "ingrese ruta del archivo" $1
+			read -p "ingrese ruta del archivo de verificacion" $2
+
+			bash descargar.sh $1 $2
 			;;
 		3)
 			bash procesar.sh
