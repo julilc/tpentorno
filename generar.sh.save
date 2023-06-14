@@ -1,0 +1,19 @@
+#! usr/bin/bash
+
+if [ $# -eq 0 ]; then
+	for argumentos in !#; do
+		cd imagenes
+		nombre= $(sort -R nombres.csv |  tail -n 1 | cut -d "," -f "1" | cut -d " " -f "1")
+		while  [-e $nombre]; do
+			$nombre= $(sort -R nombres.csv |  tail -n 1 | cut -d "," -f "1" | cut -d " " -f "1")
+		done
+		wget https://source.unsplash.com/random/900%C3%97700/?person -O $nombre
+	done
+
+exit 0
+
+else
+	echo "argumento invalidos"
+	exit 1
+fi
+
