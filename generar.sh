@@ -1,4 +1,5 @@
-#!usr/bin/bash
+#!/usr/bin/bash
+
 
 if [ $# -gt 0 ]; then
 	mkdir -p imagenes
