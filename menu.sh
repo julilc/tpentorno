@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-opcion="0"
+opcion=0
 
 until [[ $opcion =~ [1-4] ]]; do
 	echo "(1)Generar imagenes. (2)Descargar imagenes. (3) Procesar imagenes. (4)Comprimir imagenes"
