@@ -1,12 +1,16 @@
-# Utilizamos una imagen de Ubuntu
-FROM ubuntu:22.04
+#Utilizamos imagen Ubuntu
+FROM ubuntu
 
 MAINTAINER michel
 
-COPY menu.sh /home/
+#Instalamos git por si no lo tiene
+RUN apt-get update && apt-get install -y git
 
-RUN chmod +x /home/menu.sh
+#Clonamos el repositorio de github donde se encuentra el programa
+RUN git clone https://github.com/julilc/tpentorno /home/entorno
 
-# Este comando ejecuta el archivo menu.sh cuando se inicie el contenedor
-CMD ["/home/menu.sh"]
+#Cambiamos la direccion de trabajo adonde se encuentra el repositorio clonado
+WORKDIR /home/entorno
 
+#Ejecutamos el programa menu.sh
+CMD ["bash", "/home/entorno/menu.sh"]
