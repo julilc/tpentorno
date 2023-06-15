@@ -4,7 +4,7 @@ FROM ubuntu
 MAINTAINER michel
 
 #Instalamos git por si no lo tiene
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y git wget zip
 
 #Clonamos el repositorio de github donde se encuentra el programa
 RUN git clone https://github.com/julilc/tpentorno /home/entorno
