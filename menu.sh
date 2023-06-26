@@ -13,10 +13,11 @@ until [[ $opcion =~ [1-4] ]]; do
 			bash generar.sh $numero
 			;;
 		2)
-			read -p "ingrese ruta del archivo" $1
-			read -p "ingrese ruta del archivo de verificacion" $2
+			echo "ingrese las rutas con comillas antes y al terminar los enlaces. Por ejemplo 'enlace.com'"
+			read -p "ingrese ruta del archivo " ruta_archivo
+			read -p "ingrese ruta del archivo de verificacion " ruta_sum
 
-			bash descargar.sh $1 $2
+			bash descargar.sh "$ruta_archivo" "$ruta_sum"
 			;;
 		3)
 			bash procesar.sh
