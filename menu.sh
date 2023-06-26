@@ -3,7 +3,7 @@
 opcion=0
 
 until [[ $opcion =~ [1-4] ]]; do
-	echo "(1)Generar imagenes. (2)Descargar imagenes. (3) Procesar imagenes. (4)Comprimir imagenes"
+	echo "(1)Generar imagenes. (2)Descargar imagenes. (3)Descomprimir imagenes. (4) Procesar imagenes. (5)Comprimir imagenes"
 
 	read -p "ingrese la opcion deseada" opcion
 
@@ -20,9 +20,12 @@ until [[ $opcion =~ [1-4] ]]; do
 			bash descargar.sh "$ruta_archivo" "$ruta_sum"
 			;;
 		3)
-			bash procesar.sh
+			bash descomprimir.sh
 			;;
 		4)
+			bash procesar.sh
+			;;
+		5)
         		bash comprimir.sh
 			;;
 		*)
