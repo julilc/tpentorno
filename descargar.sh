@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 if [ $# -eq 2 ]; then
-	descargazip= wget $1
-	sum1=$(sha256sum $descargazip|tr -d " ")
+	wget $1 "imagenes.zip"
+	sum1=$(sha256sum imagenes.zip|tr -d " ")
 	descargasuma= wget $2
 	sum2=$(cat $descargasuma| tr -d " ")
 	if [[ $sum1 == $sum2 ]]; then
-		unzip $descargazip
+		"la suma de verificacion es correcta"
 	exit 0
 	else
 		echo "error: la suma de verificacion es incorrecta"
