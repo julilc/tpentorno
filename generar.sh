@@ -13,9 +13,8 @@ if [ $# -gt 0 ]; then
 			NOMBREMAYQ="${NOMBRE^}"
 			$CONTROL=$(ls imagenes | grep $NOMBREMAYQ; echo $?)
 		done
-		wget https://source.unsplash.com/random/900%C3%97700/?person -O $NOMBREMAYQ
-		mv $NOMBREMAYQ imagenes
-		sleep 1s
+		wget https://source.unsplash.com/random/900%C3%97700/?person -O ./imagen/$NOMBREMAYQ
+		sleep 2s
 		((i++))
 	done
 	zip -r imagenes.zip imagenes
