@@ -2,8 +2,8 @@
 
 opcion=0
 
-until [[ $opcion =~ [1-5] ]]; do
-	echo "(1)Generar imagenes. (2)Descargar imagenes. (3)Descomprimir imagenes. (4) Procesar imagenes. (5)Comprimir imagenes"
+until [[ $opcion =~ [1-6] ]]; do
+	echo "(1)Generar imagenes. (2)Descargar imagenes. (3)Descomprimir imagenes. (4) Procesar imagenes. (5)Comprimir imagenes. (6)Salir."
 
 	read -p "ingrese la opcion deseada" opcion
 
@@ -27,6 +27,9 @@ until [[ $opcion =~ [1-5] ]]; do
 			;;
 		5)
         		bash comprimir.sh
+			;;
+		6)
+			exit
 			;;
 		*)
 			echo "no corresponde al menu"

@@ -6,12 +6,13 @@ if [ $# -gt 0 ]; then
 	i=0
 	until [[ $i == $@ ]]; do
 		NOMBRE=$(sort -R nombres.csv |  tail -n 1 | cut -d "," -f "1" | cut -d " " -f "1")
-		CONTROL=$(ls imagenes | grep "^$NOMBRE$"; echo $?)
+		NOMBREMAYQ="${NOMBRE^}"
+		CONTROL=$(ls imagenes | grep "^$NOMBREMAYQ$"; echo $?)
 		while [[ $CONTROL -eq 0 ]]; do
 			nombre=$(sort -R nombres.csv |  tail -n 1 | cut -d "," -f "1" | cut -d " " -f "1")
-			$CONTROL=$(ls imagenes | grep $NOMBRE)
+			NOMBREMAYQ="${NOMBRE^}"
+			$CONTROL=$(ls imagenes | grep $NOMBREMAYQ; echo $?)
 		done
-		NOMBREMAYQ="${NOMBRE^}"
 		wget https://source.unsplash.com/random/900%C3%97700/?person -O $NOMBREMAYQ
 		mv $NOMBREMAYQ imagenes
 		sleep 1s
@@ -20,6 +21,7 @@ if [ $# -gt 0 ]; then
 	zip -r imagenes.zip imagenes
 	echo $(sha256sum imagenes.zip)>sumimagenes
 	rm -r imagenes
+	./menu.sh
 exit 0
 
 else

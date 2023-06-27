@@ -9,9 +9,12 @@ for IMAGEN in *; do
 done
 
 echo "imagenes procesadas con exito"
+cd ..
+./menu.sh
 exit 0
 else
 	echo "el directorio no existe"
+./menu.sh
 exit 1
 fi
 cd ..
