@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 if [ $# -eq 2 ]; then
-	wget "$1" -O "imagenes.zip"
-	sum1=$(sha256sum "imagenes.zip"|tr -d " ")
-	sum2=$(wget "$2" -O "archivosum" |cat archivosum | tr -d " ")
+	wget "$1" -O salida/"imagenes.zip"
+	sum1=$(sha256sum salida/"imagenes.zip"|tr -d " ")
+	sum2=$(wget "$2" -O salida/"archivosum" |cat salida/archivosum | tr -d " ")
 	if [[ $sum1 == $sum2 ]]; then
 		echo "la suma de verificacion es correcta"
 	./menu.sh

@@ -20,6 +20,8 @@ if [ $# -gt 0 ]; then
 	zip -r imagenes.zip imagenes
 	echo $(sha256sum imagenes.zip)>sumimagenes
 	rm -r imagenes
+	mv imagenes.zip  salida
+	mv sumimagenes salida
 	./menu.sh
 exit 0
 

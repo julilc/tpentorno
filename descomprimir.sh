@@ -1,8 +1,9 @@
 #!/usr/bin/bash
 
-if [[ -e "imagenes.zip" ]]; then
-	unzip "imagenes.zip"
+if [[ -e ./salida/"imagenes.zip" ]]; then
+	unzip ./salida/"imagenes.zip" -d salida
 	echo "se ha descomprimido su archivo"
+	rm -r salida/imagenes.zip
 	./menu.sh
 	exit 0
 else
