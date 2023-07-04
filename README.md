@@ -1,4 +1,6 @@
 # tpentorno
+RECUERDE QUE DEBE HABER UNA CARPETA CON NOMBRE "salida" dentro de la carpeta donde se encuentra el Dockerfile.
+No subimos la carpeta "salida" ya que Github no deja subir carpetas vacias. Creela antes de crear la imagen.
 Para crear la imagen debe ejecutar el comando
 sudo docker build -t tpentorno .
 Recuerde que debe estar dentro de la carpeta donde se encuentra el Dockerfile aqui presentado.
