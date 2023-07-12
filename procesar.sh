@@ -6,7 +6,6 @@ for IMAGEN in *; do
     if [[ "$IMAGEN" =~ ^[A-Z][a-z]+$ ]]; then
         convert "$IMAGEN" -gravity center -resize 512x512+0+0 \-extent 512x512 "$IMAGEN"
     fi
-cd /home/entorno
 done
 
 echo "imagenes procesadas con exito"
